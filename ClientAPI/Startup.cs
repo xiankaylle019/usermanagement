@@ -33,7 +33,8 @@ namespace ClientAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext> (db => db.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
+            services.AddDbContext<DataContext> (db => db.UseSqlServer 
+            (Configuration.GetConnectionString ("DefaultConnection")));
             
             services.AddAutoMapper();
 
@@ -124,6 +125,7 @@ namespace ClientAPI
             // new RoleSeeder(sPovider).SeedRoles().Wait();
             // app.UseHttpsRedirection();
             app.UseCors("AllowAll");
+            app.UseAuthentication();
             app.UseMvc();
 
         

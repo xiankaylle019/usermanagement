@@ -56,7 +56,9 @@ namespace ClientAPI.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "User");
+                string[] roles =  { "Admin", "User", "Member","Manager" };
+                
+                await _userManager.AddToRoleAsync(user, roles[0]);
 
                 regVM.IdentityId = user.Id;
 
@@ -71,7 +73,7 @@ namespace ClientAPI.Controllers
                 //     Username = regVM.Username
                 // });
                 
-                var tokenString = new JWTGenerator().GenerateJWT(user, _configuration);
+                var tokenString = new JWTGenerator().GenerateJWT(user, _configuration,roles[0]);
 
                 await _signInManager.SignInAsync(user, false);
 

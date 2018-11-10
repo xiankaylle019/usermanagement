@@ -4,7 +4,8 @@ using Microsoft.Extensions.Configuration;
 
 namespace ClientAPI.DataAccess
 {
-    public class DesignTimeDbContextFactory<TContext> : IDesignTimeDbContextFactory<TContext>
+    public class DesignTimeDbContextFactory<TContext> : 
+    IDesignTimeDbContextFactory<TContext>
     where TContext : DbContext
     {
         public TContext CreateDbContext(string[] args)

@@ -20,19 +20,14 @@ export class AuthenticationService {
 
   public jwtHelper = new JwtHelperService(); // need to import manually
 
-
   constructor(private http: HttpClient) { 
  
   }
-
-  isLoggedIn()
-  {   
-    const token = localStorage.getItem('token');
-
-    return  !this.jwtHelper.isTokenExpired(token)
-
+  getToken(){
+     const token = localStorage.getItem('token');
+     return token;
   }
-
+  
   login(authvm: AuthVM) {
 
     return this.http.post<UserAuth>(this.baseUrl + "/login", authvm)
@@ -60,7 +55,13 @@ export class AuthenticationService {
     localStorage.removeItem('token');    
     
   }
+  isLoggedIn()
+  {   
+    const token = localStorage.getItem('token');
 
+    return  !this.jwtHelper.isTokenExpired(token)
+
+  }
 
 }
   

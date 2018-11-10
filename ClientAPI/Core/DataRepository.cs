@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace ClientAPI.Core
 {
-    public abstract class DataRepository<TEntity, TContext> : DesignTimeDbContextFactory<TContext>,IDataRepository<TEntity>, IDisposable
+    public abstract class DataRepository<TEntity, TContext> : 
+    DesignTimeDbContextFactory<TContext>,IDataRepository<TEntity>, IDisposable
     where TEntity : class
     where TContext: DbContext
     {

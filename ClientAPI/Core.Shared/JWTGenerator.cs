@@ -11,7 +11,8 @@ namespace ClientAPI.Core.Shared
 {
     public class JWTGenerator
     {
-         public object GenerateJWT(ApplicationUser user,  IConfiguration config, params string[] role){
+         public object GenerateJWT(ApplicationUser user,  
+         IConfiguration config, params string[] role){
 
             var tokenHandler = new JwtSecurityTokenHandler ();
 

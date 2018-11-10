@@ -7,14 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 import { AuthGuard } from './_guards/auth.guard';
-import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 
-
-
-const routes: Routes = [
-    
+const routes: Routes = [    
   { 
-      path: '', redirectTo: '/login', pathMatch: 'full' 
+    path: '', redirectTo: '/login', pathMatch: 'full' 
   }
   ,
   { 

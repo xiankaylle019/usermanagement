@@ -20,9 +20,11 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthenticationService
   ) {
-    if(authService.isLoggedIn())
+
+   if(authService.isLoggedIn())
         this.router.navigateByUrl("/usermanagement/dashboard");
-   }
+        
+   } 
 
   ngOnInit() {
 
